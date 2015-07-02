@@ -5,7 +5,8 @@ angular.module('MyApp', [
   'firebase',
   'MyApp.services',
   'MyApp.directives',
-  'MyApp.controllers'
+  'MyApp.controllers',
+  'ngCordova'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
   var resolve = {

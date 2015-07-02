@@ -4,14 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>MyApp</title>
-
+    <link href="css/owfont-regular.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet">
     <link href="myapp.css" rel="stylesheet">
 
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="lib/firebase/firebase.js"></script>
     <script src="lib/firebase/angularfire.min.js"></script>
     <script src="lib/firebase/firebase-simple-login.js"></script>
-
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -25,6 +26,8 @@
     <script src="reset-password/reset-password-controller.js"></script>
     <script src="change-password/change-password-controller.js"></script>
     <script src="dashboard/dashboard-controller.js"></script>
+    <script src="dashboard/dashboard-service.js"></script>
+
   </head>
 
   <body ng-app="MyApp">

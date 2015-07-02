@@ -1,0 +1,95 @@
+/* Empty. Add your own CSS if you like */
+.hero
+{
+    position: absolute;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+    margin: auto;
+
+    transform: scale(1.3);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    font-family: 'Helvetica';
+
+}
+
+.blur
+{
+    -webkit-filter: blur(3px);
+       -moz-filter: blur(3px);
+         -o-filter: blur(3px);
+        -ms-filter: blur(3px);
+            filter: blur(3px);
+}
+.Absolute-Center
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+
+.fuzzy-white
+{
+    opacity: .5;
+    background-color: #fff;
+}
+
+.content
+{
+    font-family: 'Helvetica';
+
+    color: #4a4a4a;
+}
+
+.bottom
+{
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+
+    text-align: center;
+    background-color: #000000;
+    opacity: 0.7;
+}
+
+.heart-size
+{
+    font-size: 42px;
+
+    z-index: 5;
+
+    text-align: center;
+}
+.circle
+{
+    width: 100px;
+    height: 100px;
+
+    -webkit-border-radius: 50px;
+       -moz-border-radius: 50px;
+            border-radius: 50px;
+}
+.box-size
+{
+    width: 16%;
+    height: 25%;
+}
+.description{
+	font-size: 42px;
+	line-height: 1;
+	text-align: left;
+	color: #FFFFFF;
+}
+.weather{
+	font-size: 20px;
+	color: #FFFFFF;
+}
