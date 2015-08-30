@@ -42,7 +42,7 @@ angular.module('MyApp.controllers').controller('SignupCtrl',
     }
 
     function createMyAppUser(authUser) {
-      return User.create(authUser.uid, authUser.email);
+      return User.create(authUser.uid, authUser.email, User.generateSecret);
     }
 
     function goToChangePassword() {

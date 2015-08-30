@@ -15,10 +15,21 @@ angular.module('MyApp.services').service('User',
       return defer.promise;
     };
 
-    this.create = function(id, email) {
+    this.create = function(id, email, secret) {
       var users = $firebase(usersRef);
 
-      return users.$child(id).$set({ email: email });
+      return users.$child(id).$set({ email: email, secret: secret });
+    };
+
+    this.generateSecret = function() {
+      var text = "";
+      var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+      for( var i=0; i < 5; i++ ) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length))
+      };
+          
+      return text;
     };
 
     this.recordPasswordChange = function() {
