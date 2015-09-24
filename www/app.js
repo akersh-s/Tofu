@@ -16,6 +16,7 @@ angular.module('MyApp', [
 
       Auth.getCurrentUser().then(function() {
         User.loadCurrentUser().then(function() {
+          User.loadUserPartner();
           if (state.name === 'change-password') {
             defer.resolve();
           } else {

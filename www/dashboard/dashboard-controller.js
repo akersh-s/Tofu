@@ -19,17 +19,18 @@ angular.module('MyApp.controllers').controller('DashboardCtrl',
           "longitude": longitude
         };
         var currentPosition = coordinates;
+        User.recordGeolocation(currentPosition);
+        var partnerPosition = User.getUserPartner().geo;
+
         var box = {
-          "minX": currentPosition.longitude - 1,
-          "minY": currentPosition.latitude - 1,
-          "maxX": currentPosition.longitude + 1,
-          "maxY": currentPosition.latitude + 1
+          "minX": partnerPosition.longitude - 1,
+          "minY": partnerPosition.latitude - 1,
+          "maxX": partnerPosition.longitude + 1,
+          "maxY": partnerPosition.latitude + 1
         }
 
-        User.recordGeolocation(currentPosition);
-
         //get the weather data
-        locationFactory.getWeatherData(currentPosition).
+        locationFactory.getWeatherData(partnerPosition).
         then(function(data) {
           $scope.weatherData = data.data;
           console.log(data.data);
