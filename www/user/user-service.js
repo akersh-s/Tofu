@@ -4,6 +4,7 @@ angular.module('MyApp.services').service('User',
   function($q, $firebase, FIREBASE_ROOT, Auth) {
     var usersRef = new Firebase(FIREBASE_ROOT + '/users');
     var currentUser = null;
+    var userPartner = null;
 
     this.getCurrentUser = function() {
       return currentUser;
@@ -12,12 +13,21 @@ angular.module('MyApp.services').service('User',
     this.loadCurrentUser = function() {
       var defer = $q.defer();
       var currentUserRef = usersRef.child(Auth.currentUser.uid);
-      
+
       currentUser = $firebase(currentUserRef);
       console.log(currentUser);
       currentUser.$on('loaded', defer.resolve);
 
       return defer.promise;
+    };
+
+    this.getPartnerLocation = function() {
+      var users = $firebase(usersRef);
+      userPartner = users.$child(currentUser.key);
+      console.log(userPartner);
+      var partnerLocation = userPartner.geo;
+
+      return partnerLocation;
     };
 
     this.create = function(id, email) {

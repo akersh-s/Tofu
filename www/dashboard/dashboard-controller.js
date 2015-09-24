@@ -26,7 +26,7 @@ angular.module('MyApp.controllers').controller('DashboardCtrl',
           "maxY": currentPosition.latitude + 1
         }
 
-        User.recordGeolocation(box);
+        User.recordGeolocation(currentPosition);
 
         //get the weather data
         locationFactory.getWeatherData(currentPosition).
