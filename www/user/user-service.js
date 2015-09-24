@@ -15,10 +15,10 @@ angular.module('MyApp.services').service('User',
       return defer.promise;
     };
 
-    this.create = function(id, email, secret) {
+    this.create = function(id, email) {
       var users = $firebase(usersRef);
 
-      return users.$child(id).$set({ email: email, secret: secret });
+      return users.$child(id).$set({ email: email });
     };
 
     this.generateSecret = function() {

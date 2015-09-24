@@ -2,8 +2,10 @@
 
 angular.module('MyApp.services')
 
-  .service('locationFactory', function($http, $q) {
-
+  .service('locationFactory', function($http, $q, FIREBASE_ROOT, User) {
+    var userRef = new Firebase(FIREBASE_ROOT);
+    console.log(FIREBASE_ROOT);
+    
     this.getBackgroundImage = function(box) {
       var baseUrl = 'http://www.panoramio.com/map/get_panoramas.php?callback=JSON_CALLBACK&set=public&from=0&to=10' +
         '&minx=' + box.minx +

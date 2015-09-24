@@ -2,7 +2,7 @@
 
 angular.module('MyApp.controllers').controller('ChangePasswordCtrl',
   function($scope, $state, $ionicLoading, Auth, User) {
-    var passwordStrengthRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}$/;
+    var passwordStrengthRegex = /(?=.{8,})/;
 
     $scope.user = {
       oldPassword: '',
