@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('MyApp.controllers').controller('DashboardCtrl', 
-  function($scope, $ionicLoading, locationFactory, $cordovaGeolocation) {
+  function($scope, $ionicLoading, locationFactory, $cordovaGeolocation, FIREBASE_ROOT, User) {
 
   var randomIntFromInterval = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -20,11 +20,13 @@ angular.module('MyApp.controllers').controller('DashboardCtrl',
         };
         var currentPosition = coordinates;
         var box = {
-          "minx": currentPosition.longitude - 1,
-          "miny": currentPosition.latitude - 1,
-          "maxx": currentPosition.longitude + 1,
-          "maxy": currentPosition.latitude + 1
+          "minX": currentPosition.longitude - 1,
+          "minY": currentPosition.latitude - 1,
+          "maxX": currentPosition.longitude + 1,
+          "maxY": currentPosition.latitude + 1
         }
+
+        User.recordGeolocation(box);
 
         //get the weather data
         locationFactory.getWeatherData(currentPosition).

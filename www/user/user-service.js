@@ -5,11 +5,16 @@ angular.module('MyApp.services').service('User',
     var usersRef = new Firebase(FIREBASE_ROOT + '/users');
     var currentUser = null;
 
+    this.getCurrentUser = function() {
+      return currentUser;
+    };
+
     this.loadCurrentUser = function() {
       var defer = $q.defer();
       var currentUserRef = usersRef.child(Auth.currentUser.uid);
       
       currentUser = $firebase(currentUserRef);
+      console.log(currentUser);
       currentUser.$on('loaded', defer.resolve);
 
       return defer.promise;
@@ -36,6 +41,11 @@ angular.module('MyApp.services').service('User',
       var now = Math.floor(Date.now() / 1000);
       
       return currentUser.$update({ passwordLastChangedAt: now });
+    };
+
+    this.recordGeolocation = function(box) {
+
+      return currentUser.$update({geo: box});
     };
 
     this.hasChangedPassword = function() {
