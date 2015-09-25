@@ -79,7 +79,8 @@ angular.module('MyApp', [
 
   $urlRouterProvider.otherwise('/app/dashboard');
 })
-.run(function($rootScope, $state, $ionicPlatform) {
+.run(function($rootScope, $state, $ionicPlatform, $cordovaStatusbar) {
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory 
     // bar above the keyboard for form inputs)
@@ -89,7 +90,8 @@ angular.module('MyApp', [
 
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
+      //StatusBar.styleDefault();
+      StatusBar.overlaysWebView(true);
     }
 
     $rootScope.$on('$stateChangeError', function(event, toState, toParams, 

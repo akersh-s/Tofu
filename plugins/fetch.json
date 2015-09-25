@@ -21,14 +21,40 @@
     },
     "org.apache.cordova.device": {
         "source": {
-            "type": "local",
-            "path": "/Users/mishamoroshko/.plugman/cache/org.apache.cordova.device/0.2.10/package"
-        }
+            "type": "registry",
+            "id": "org.apache.cordova.device"
+        },
+        "is_top_level": true,
+        "variables": {}
     },
     "org.apache.cordova.geolocation": {
         "source": {
             "type": "local",
             "path": "/Users/akersh.srivastava/.plugman/cache/org.apache.cordova.geolocation/0.3.12/package"
         }
+    },
+    "cordova-plugin-device": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-device"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-statusbar": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-statusbar"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.statusbar": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.statusbar"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }
