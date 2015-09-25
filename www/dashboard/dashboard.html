@@ -1,15 +1,25 @@
 <ion-view hide-nav-bar="true">
     <div class="hero" ng-style="heroImage" ></div>
     <ion-content scroll="false" padding="false" has-bouncing="false">
+
     <div class="row top">
-      <div class="col name">{{partnerInfo.name}}</div>
+      <div class="col name">{{partnerInfo.name}}, thinking of you</div>
     </div>
     <div class="Absolute-Center ion-ios-heart heart-size"></div>
     <div class="Absolute-Center fuzzy-white circle"></div>
+    <div class="Absolute-Center outer-circle"></div>
     <div class="row bottom">
       <div class="col description">
-        <p>{{weatherData.weather[0].description}}</p>
+        <div class="row field">
+          <p class="col field">sunrise: </p>
+          <p class="col field time">{{weatherData.sys.sunrise | date:'HH:mm'}}</p>
+        </div>
+        <div class="row field">
+          <p class="col field">sunset: </p>
+          <p class="col field time">{{weatherData.sys.sunset | date:'HH:mm'}}</p>
+        </div>
       </div>
+      <div class="col description">{{weatherData.weather[0].description}}</div>
       <div class="col weather">
         <i class="owf owf-{{weatherData.weather[0].id}} owf-2x"></i>
       </div>
