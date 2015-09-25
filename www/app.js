@@ -66,6 +66,12 @@ angular.module('MyApp', [
       controller: 'ChangePasswordCtrl',
       resolve: resolve
     })
+    .state('update-profile', {
+      url: '/update-profile',
+      templateUrl: 'update-profile/update-profile.html',
+      controller: 'UpdateProfileCtrl',
+      resolve: resolve
+    })
     .state('app.dashboard', {
       url: '/dashboard', 
       views: {
