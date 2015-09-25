@@ -1,6 +1,9 @@
+<ion-view hide-nav-bar="true">
     <div class="hero" ng-style="heroImage" ></div>
     <ion-content scroll="false" padding="false" has-bouncing="false">
-    
+    <div class="row top">
+      <div class="col name">{{partnerInfo.name}}</div>
+    </div>
     <div class="Absolute-Center ion-ios-heart heart-size"></div>
     <div class="Absolute-Center fuzzy-white circle"></div>
     <div class="row bottom">
@@ -11,3 +14,4 @@
         <i class="owf owf-{{weatherData.weather[0].id}} owf-2x"></i>
       </div>
     </div>
+</ion-view>

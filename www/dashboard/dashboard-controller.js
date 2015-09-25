@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('MyApp.controllers').controller('DashboardCtrl', 
-  function($scope, $ionicLoading, locationFactory, $cordovaGeolocation, FIREBASE_ROOT, User) {
+  function($scope, $ionicLoading, locationFactory, $cordovaGeolocation, User) {
 
   var randomIntFromInterval = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -20,8 +20,11 @@ angular.module('MyApp.controllers').controller('DashboardCtrl',
         };
         var currentPosition = coordinates;
         User.recordGeolocation(currentPosition);
-        var partnerPosition = User.getUserPartner().geo;
-
+        var partnerInfo = User.getUserPartner();
+        var partnerPosition = partnerInfo.geo;
+        $scope.partnerInfo = partnerInfo;
+        $scope.$apply();
+        console.log(partnerInfo);
         var box = {
           "minX": partnerPosition.longitude - 1,
           "minY": partnerPosition.latitude - 1,
