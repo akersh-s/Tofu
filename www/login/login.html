@@ -1,25 +1,26 @@
 <ion-view><ion-content>
 <div class="row">
   <ion-header-bar class="bar-dark">
-    <h1 class="title">Login</h1>
+    <h1 class="title title-hack">thinking of you</h1>
   </ion-header-bar>
 </div>
+<br>
 <br>
     <div class="padding list">
       <label class="item item-input item-stacked-label">
         <span class="input-label">Email</span>
-        <input type="email" placeholder="me@gmail.com" ng-model="user.email">
+        <input type="email" placeholder="me@email.com" ng-model="user.email">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">Password</span>
-        <input type="password" placeholder="mySECRETpassword" ng-model="user.password">
+        <input type="password" placeholder="password" ng-model="user.password">
       </label>
     </div>
     <div class="padding">
-      <button class="button button-positive button-block" ng-click="login()">Login</button>
+      <button class="button button-dark button-block" ng-click="login()">Login</button>
       <div class="error" ng-if="errorMessage" ng-bind="errorMessage">
       </div>
-      <br><br><br>
+      <br><br>
       <button class="button button-stable button-block" ui-sref="reset-password">
         Forgot Password?
       </button>

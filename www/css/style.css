@@ -152,3 +152,10 @@
     font-size:10px;
     margin-top:-15px;
 }
+.title-hack{
+    font-size: 25px;
+    line-height: 1;
+        font-family: 'Helvetica';
+
+    color: #4a4a4a;
+}
