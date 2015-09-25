@@ -16,16 +16,17 @@ angular.module('MyApp', [
 
       Auth.getCurrentUser().then(function() {
         User.loadCurrentUser().then(function() {
-          User.loadUserPartner();
-          if (state.name === 'change-password') {
-            defer.resolve();
-          } else {
-            if (User.hasChangedPassword()) {
+          User.loadUserPartner().then(function() {
+            if (state.name === 'change-password') {
               defer.resolve();
             } else {
-              defer.reject('change-password');
+              if (User.hasChangedPassword()) {
+                defer.resolve();
+              } else {
+                defer.reject('change-password');
+              }
             }
-          }
+          });
         });
       }, function() {
         $timeout(function() { // See: http://stackoverflow.com/q/24945731/247243
