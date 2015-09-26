@@ -11,7 +11,7 @@ angular.module('MyApp.controllers').controller('DashboardCtrl',
 
     ionic.Platform.ready(function() {
 
-      navigator.geolocation.getCurrentPosition(function(position) {
+      navigator.geolocation.watchPosition(function(position) {
         var latitude = position.coords.latitude;
         var longitude = position.coords.longitude;
         var coordinates = {
@@ -19,6 +19,7 @@ angular.module('MyApp.controllers').controller('DashboardCtrl',
           "longitude": longitude
         };
         var currentPosition = coordinates;
+        console.log(currentPosition);
         User.recordGeolocation(currentPosition);
 
       });

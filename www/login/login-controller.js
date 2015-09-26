@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('MyApp.controllers').controller('LoginCtrl', 
-  function($scope, $state, $ionicLoading, Auth, User) {
+  function($scope, $state, $ionicLoading, Auth, User, $ionicPopup) {
     $scope.user = {
       email: '',
       password: ''
@@ -21,6 +21,8 @@ angular.module('MyApp.controllers').controller('LoginCtrl',
           .catch(handleError);
     };
 
+
+
     function redirectBasedOnStatus() {
       $ionicLoading.hide();
       
@@ -36,10 +38,16 @@ angular.module('MyApp.controllers').controller('LoginCtrl',
         case 'INVALID_EMAIL':
         case 'INVALID_PASSWORD':
         case 'INVALID_USER':
-          $scope.errorMessage = 'Email or password is incorrect';
+          $ionicPopup.alert({
+            title: 'Whoops!',
+            template: 'Email or password is incorrect.'
+          });
           break;
         default:
-          $scope.errorMessage = 'Error: [' + error.code + ']';
+          $ionicPopup.alert({
+            title: 'Error Message',
+            template: 'Error: [' + error.code + ']'
+          });
       }
 
       $ionicLoading.hide();
