@@ -7,6 +7,9 @@ angular.module('MyApp.controllers').controller('DashboardCtrl',
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
+  $scope.sendTofu = function() {
+    console.log("tofu sent!");
+  };
   $scope.init = function() {
 
     ionic.Platform.ready(function() {
