@@ -143,10 +143,15 @@
     margin-bottom:0;
     line-height: 1;
     text-align:center;
+    margin-left:auto;
+    width:100%;
 }
 .experience{
     margin-bottom:0;
-    font-size:16px;
+    font-size:12px;
+    text-align: center;
+    margin-left:auto;
+    width:100%;
 }
 .location{
     font-size:10px;
@@ -166,6 +171,6 @@
 
 }
 .inversion:active{
-       -webkit-filter: invert(1);
-   filter: invert(1);
+       -webkit-filter: invert(100%) !important;
+   filter: invert(100%) !important;
 }

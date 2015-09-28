@@ -6,11 +6,11 @@
       <div class="col name">thinking of you, {{partnerInfo.name}}</div>
     </div>
 
-    <div class="inversion" ng-click="sendTofu()">
+    <div ng-click="sendTofu()" class="inversion">
     <div class="Absolute-Center ion-ios-heart heart-size"></div>
     <div class="Absolute-Center fuzzy-white circle"></div>
     <div class="Absolute-Center outer-circle"></div>
-  </div>
+    </div>
 
     <div class="row bottom">
       <div class="col description">
@@ -25,7 +25,7 @@
       </div>
       <div class="col description">
         <div class="row">        
-          <p class="sentence">{{partnerInfo.name}} is experiencing</p>
+          <p class="sentence">{{partnerInfo.name}} <span class="ion-ios-heart"></span> {{weatherData.name}}</p>
         </div>
         <div class="row">
           <p class="experience">{{weatherData.weather[0].description}}</p>
