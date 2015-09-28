@@ -8,8 +8,11 @@ angular.module('MyApp.controllers').controller('DashboardCtrl',
   };
 
   $scope.sendTofu = function() {
+    var timestamp = new Date().getTime();
     console.log("tofu sent!");
+    User.recordTofu(timestamp);
   };
+  
   $scope.init = function() {
 
     ionic.Platform.ready(function() {

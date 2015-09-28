@@ -61,6 +61,11 @@ angular.module('MyApp.services').service('User',
       return currentUser.$update({geo: box});
     };
 
+    this.recordTofu = function(timestamp) {
+
+      return userPartner.$update({tofu: timestamp});
+    };
+
     this.hasChangedPassword = function() {
       return angular.isDefined(currentUser.passwordLastChangedAt);
     };
