@@ -53,7 +53,7 @@
 .top{
     position: absolute;
     top: 0;
-    margin-top:24px;
+    margin-top:21px;
     width: 100%;
     text-align: center;
     background-color: #000000;
@@ -170,7 +170,13 @@
 .button{
 
 }
+.inversion.activated,
 .inversion:active{
        -webkit-filter: invert(100%) !important;
    filter: invert(100%) !important;
+      width: 120px;
+    height: 120px;
+    -webkit-border-radius: 60px;
+       -moz-border-radius: 60px;
+            border-radius: 60px;
 }

@@ -50,6 +50,12 @@ angular.module('MyApp.services').service('User',
       return text;
     };
 
+    this.listenForTofu = function() {
+      currentUser.$on("child_changed", function(snapshot) {
+        console.log(snapshot);
+      });
+    }
+
     this.recordPasswordChange = function() {
       var now = Math.floor(Date.now() / 1000);
       
