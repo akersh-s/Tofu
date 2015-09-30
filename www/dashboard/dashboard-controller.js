@@ -2,15 +2,25 @@
 
 angular.module('MyApp.controllers').controller('DashboardCtrl', 
   function($scope, $ionicLoading, locationFactory, $cordovaGeolocation, User) {
+  $scope.allowTofu = true;
 
   var randomIntFromInterval = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
+  var startTimer = function() {
+
+  };
+
   $scope.sendTofu = function() {
     var timestamp = new Date().getTime();
-    console.log("tofu sent!");
     User.recordTofu(timestamp);
+    $scope.allowTofu = false;
+    setTimeout(function(){ 
+        $scope.allowTofu = true;
+        $scope.$apply();
+        console.log("worked" + (randomIntFromInterval(5, 10)*1000));
+    }, randomIntFromInterval(5, 6) * 1000);
   };
   
   $scope.init = function() {

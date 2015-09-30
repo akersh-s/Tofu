@@ -170,6 +170,9 @@
 .button{
 
 }
+.profile-pic{
+    background-color:#FFF;
+}
 .inversion.activated,
 .inversion:active{
        -webkit-filter: invert(100%) !important;

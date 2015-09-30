@@ -6,10 +6,15 @@
       <div class="col name">thinking of you, {{partnerInfo.name}}</div>
     </div>
 
-    <div ng-click="sendTofu()" class="Absolute-Center inversion">
-      <div class="Absolute-Center ion-ios-heart heart-size"></div>
-      <div class="Absolute-Center fuzzy-white circle"></div>
+    <div ng-show="allowTofu" ng-click="sendTofu()" class="Absolute-Center inversion">
+      <div ng-show="allowTofu" class="Absolute-Center ion-ios-heart heart-size"></div>
+      <div ng-show="allowTofu" class="Absolute-Center fuzzy-white circle"></div>
+      <div ng-show="allowTofu" class="Absolute-Center outer-circle"></div>
+    </div>
+
+    <div ng-hide="allowTofu">
       <div class="Absolute-Center outer-circle"></div>
+      <div class="Absolute-Center profile-pic circle"></div>
     </div>
 
     <div class="row bottom">
