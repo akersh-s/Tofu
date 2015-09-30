@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('MyApp.services').service('User',
-  function($q, $firebase, FIREBASE_ROOT, Auth) {
+  function($q, $firebase, FIREBASE_ROOT, Auth, $cordovaLocalNotification) {
     var usersRef = new Firebase(FIREBASE_ROOT + '/users');
     var currentUser = null;
     var userPartner = null;
@@ -53,6 +53,10 @@ angular.module('MyApp.services').service('User',
     this.listenForTofu = function() {
       currentUser.$on("child_changed", function(snapshot) {
         console.log(snapshot);
+        console.log("received tofu!");
+        $cordovaLocalNotification.add({
+          title: "Hi " + currentUser.name + ",",
+          message: userPartner.name + " is thinking of you."});
       });
     }
 
