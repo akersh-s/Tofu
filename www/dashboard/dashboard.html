@@ -21,11 +21,11 @@
       <div class="col description">
         <div class="row field">
           <p class="col field">sunrise: </p>
-          <p class="col field time">{{weatherData.sys.sunrise | date:'HH:mm'}}</p>
+          <p class="col field time">{{weatherData.sys.sunrise * 1000 | date:'h:mm a'}}</p>
         </div>
         <div class="row field">
           <p class="col field">sunset: </p>
-          <p class="col field time">{{weatherData.sys.sunset | date:'HH:mm'}}</p>
+          <p class="col field time">{{weatherData.sys.sunset * 1000 | date:'h:mm a'}}</p>
         </div>
       </div>
       <div class="col description">
