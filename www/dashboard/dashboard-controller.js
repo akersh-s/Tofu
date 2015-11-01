@@ -26,6 +26,7 @@ angular.module('MyApp.controllers').controller('DashboardCtrl',
   $scope.init = function() {
 
     ionic.Platform.ready(function() {
+      //window.cordova.plugins.backgroundMode.enable();
 
       navigator.geolocation.watchPosition(function(position) {
         var latitude = position.coords.latitude;
@@ -44,10 +45,10 @@ angular.module('MyApp.controllers').controller('DashboardCtrl',
       var partnerPosition = partnerInfo.geo;
       $scope.partnerInfo = partnerInfo;
       var box = {
-        "minX": partnerPosition.longitude - 1,
-        "minY": partnerPosition.latitude - 1,
-        "maxX": partnerPosition.longitude + 1,
-        "maxY": partnerPosition.latitude + 1
+        "minX": partnerPosition.longitude - .1,
+        "minY": partnerPosition.latitude - .1,
+        "maxX": partnerPosition.longitude + .1,
+        "maxY": partnerPosition.latitude + .1
       }
 
       //get the weather data

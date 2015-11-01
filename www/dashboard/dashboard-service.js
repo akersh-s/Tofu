@@ -22,7 +22,7 @@ angular.module('MyApp.services')
     this.getWeatherData = function(currentPosition) {
       var baseUrl = 'http://api.openweathermap.org/data/2.5/weather?' +
         'lat=' + currentPosition.latitude +
-        '&lon=' + currentPosition.longitude + '';
+        '&lon=' + currentPosition.longitude + '&APPID=9098c727575b596934c96a9da189b621';
       console.log(baseUrl);
       return $http.get(baseUrl).
       success(function(data, status, headers, config) {}).
