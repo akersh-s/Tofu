@@ -42,7 +42,7 @@ Placeholder for the app itself. The app tracks the user's geolocation, uses the 
     6. ionic build android
     7. ionic run android
 
- ### To run the app on an iOS device:
+### To run the app on an iOS device:
 
     5. ionic platform add ios
     6. ionic build ios
