@@ -1,6 +1,10 @@
 # Notes
 
+*Project is no longer maintained
 *Re-implemented in React Native as a learning exercise here:  https://github.com/akersh-s/Tofu-React
+
+Stack:
+Angular (JS Framework) + Ionic (Hybrid App Framework), Karma (Test Runner), Gulp (Task Runner), Firebase (Auth,DB), SASS (Styling Engine), Bower (Package Manager)
 
 # Features
 
